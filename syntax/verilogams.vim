@@ -21,7 +21,7 @@ endif
 " Annex B.1 'All keywords'
 syn keyword verilogamsStatement above abs absdelay acos acosh ac_stim
 syn keyword verilogamsStatement always analog analysis and asin
-syn keyword verilogamsStatement asinh assign atan atan2 atanh branch
+syn keyword verilogamsStatement asinh assign atan atan2 atanh
 syn keyword verilogamsStatement buf bufif1 ceil cmos
 syn keyword verilogamsStatement connectrules cos cosh cross ddt ddx deassign
 syn keyword verilogamsStatement defparam disable discipline
@@ -30,7 +30,7 @@ syn keyword verilogamsStatement endconnectrules endmodule endfunction
 syn keyword verilogamsStatement endnature endparamset endprimitive endspecify
 syn keyword verilogamsStatement endtable endtask event exp final_step
 syn keyword verilogamsStatement flicker_noise floor flow force fork
-syn keyword verilogamsStatement function generate genvar highz0
+syn keyword verilogamsStatement function generate highz0
 syn keyword verilogamsStatement highz1 hypot idt idtmod if ifnone initial
 syn keyword verilogamsStatement initial_step inout input join
 syn keyword verilogamsStatement laplace_nd laplace_np laplace_zd laplace_zp
@@ -40,7 +40,8 @@ syn keyword verilogamsStatement negedge net_resolution nmos noise_table nor not
 syn keyword verilogamsStatement notif0 notif1 or output paramset pmos
 syn keyword verilogamsType      parameter real integer electrical input output
 syn keyword verilogamsType      inout reg tri tri0 tri1 triand trior trireg
-syn keyword verilogamsType      string from exclude aliasparam ground
+syn keyword verilogamsType      string from exclude aliasparam ground genvar
+syn keyword verilogamsType      branch
 syn keyword verilogamsStatement posedge potential pow primitive pull0 pull1
 syn keyword verilogamsStatement pullup pulldown rcmos release
 syn keyword verilogamsStatement rnmos rpmos rtran rtranif0 rtranif1
@@ -95,7 +96,7 @@ syn match   verilogamsNumber "\(\<\d\+\|\)'[bB]\s*[0-1_xXzZ?]\+\>"
 syn match   verilogamsNumber "\(\<\d\+\|\)'[oO]\s*[0-7_xXzZ?]\+\>"
 syn match   verilogamsNumber "\(\<\d\+\|\)'[dD]\s*[0-9_xXzZ?]\+\>"
 syn match   verilogamsNumber "\(\<\d\+\|\)'[hH]\s*[0-9a-fA-F_xXzZ?]\+\>"
-syn match   verilogamsNumber "\<[+-]\=[0-9_]\+\(\.[0-9_]*\|\)\(e[0-9_]*\|\)\>"
+syn match   verilogamsNumber "\<[+-]\=[0-9_]\+\(\.[0-9_]*\|\)\(e[0-9_]*\|\)[TGMKkmunpfa]\=\>"
 
 syn region  verilogamsString start=+"+ skip=+\\"+ end=+"+ contains=verilogamsEscape
 syn match   verilogamsEscape +\\[nt"\\]+ contained
